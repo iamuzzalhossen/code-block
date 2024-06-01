@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Code Block</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img src="images/circle-icons.png" alt="Circle Icons">
+                <button onclick="copyCode()"><img src="images/copy-icon.png" class="icon"> Copy code</button>
+            </div>
+            <div class="codeBox">
+                <textarea id="codeExample" readonly>
+                    <script>
+                    function copyCode(){
+                        codeBox.select();
+                    
+                        navigator.clipboard.writeText(codeBox.value)
+                            .then(() => {
+                                document.querySelector("button").innerHTML = "Code Copied";
+                            })
+                            .catch(() => {
+                                document.querySelector("button").innerHTML = "Error Occurred!";
+                            });
+                    }
+                    </script>
+                </textarea>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
